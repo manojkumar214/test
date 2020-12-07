@@ -104,6 +104,7 @@ resource "aws_security_group" "allow_all" {
 terraform {
   backend "s3" {
   bucket = "www.manojkumar.com"
+  dynamodb_table = "terraform-state-lock-dynamo"
   key    = "aws.tfstate"
   region = "us-east-1"
   }
