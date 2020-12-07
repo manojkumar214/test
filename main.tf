@@ -73,6 +73,17 @@ resource "aws_subnet" "subnet5-public" {
 
 }
 
+resource "aws_subnet" "subnet6-public" {
+    vpc_id = aws_vpc.default.id
+    cidr_block = "10.1.6.0/24"
+    availability_zone = "us-east-1d"
+
+    tags = {
+        Name = "subnet06"
+    }
+
+}
+
 
 resource "aws_route_table" "terraform-public" {
     vpc_id = aws_vpc.default.id
