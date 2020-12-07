@@ -89,3 +89,11 @@ resource "aws_security_group" "allow_all" {
     cidr_blocks     = ["0.0.0.0/0"]
     }
 }
+
+terraform {
+  backend "s3" {
+  bucket = "www.manojkumar.com"
+  key    = "aws.tfstate"
+  region = "us-east-1"
+  }
+}  
